@@ -1,0 +1,14 @@
+{
+  "name": "newshound",
+  "description": "newshound node app",
+  "author": "https://github.com/solrevdev",
+  "dependencies": {
+    "feed-read": "*",
+    "async":"*",
+    "request":"*"
+  },
+  "devDependencies": {
+    "mocha": "*"
+  },
+  "engine": "node >= 0.10.23"
+}
