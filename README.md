@@ -24,6 +24,7 @@ Todo:
 * use express web server to serve static resources (bootstrap images jquery etc)
 * use mongodb and mogoose to store list of feeds in database and cache etc
 * tidy up UI by using bootstrap, angularJS and mustache etc etc
+* tie into heroku toolkit so pushes to github deploy to heroku
 * more besides...
 
 
