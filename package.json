@@ -10,5 +10,5 @@
   "devDependencies": {
     "mocha": "*"
   },
-  "engine": "node >= 0.10.23"
+  "engine": "node >= 0.10.26"
 }
