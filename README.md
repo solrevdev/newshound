@@ -45,6 +45,7 @@ Todo:
 * use express web server to serve static resources (bootstrap images jquery etc)
 * use [nedb](https://github.com/solrevdev/nedb) as an embedded database for storage
 * tidy up UI by using bootstrap, angularJS and mustache etc etc
+* tie into heroku toolkit so pushes to github deploy to heroku
 * more besides...
 
 
