@@ -42,7 +42,7 @@ Then run the app
 
 Todo:
 
-* it's 5:30am i need a few hours sleep before work will try and fix ajax call to express /feeds api at lunch
+* add images and tidy up, more callbacks or socket.io perhaps?
 * use [nedb](https://github.com/solrevdev/nedb) as an embedded database for storage
 * tie into heroku toolkit so pushes to github deploy to heroku
 

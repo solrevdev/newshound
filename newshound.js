@@ -3,12 +3,13 @@ var app = express();
 
 var feed = require('feed-read'), 
     http = require("http"),
-    port = process.env.PORT || 5000, // downloaded the heroku toolbelt to deploy finished version to well heroki
+    port = process.env.PORT || 5000, // downloaded the heroku toolbelt to deploy to heroku
     urls = [
         "http://feeds.bbci.co.uk/news/rss.xml",
         "http://news.sky.com/feeds/rss/home.xml"
-    ]; // the feeds to display. next version will store in mongo and use mongoose
-
+    ];
+    
+var data = '';
 
 app.configure(function(){
   app.use(express.static(__dirname + '/public'));
@@ -21,10 +22,7 @@ app.get('/', function(req, res){
 
 app.post('/feeds', function(req, res) {
    console.log(req);
-   console.log('req received');
    res.set('Content-Type', 'text/html');
-       
-   var data = '<p>news feeds : </p>';
 
    for (var j = 0; j < urls.length; j++) {
 
@@ -49,7 +47,10 @@ app.post('/feeds', function(req, res) {
                 data += "<p><strong>" +author +" - " +a.published + "</strong> <br />\n";
                 data += a.content+"</p>\n";
 
-                console.log("data:" + data);
+                
+                res.send(new Buffer(data));
+                //console.log("data:" + data);
+
 
                 // check for end of articles and feeds
                 if( i === articles.length-1 && j === urls.length-1) {
@@ -60,7 +61,8 @@ app.post('/feeds', function(req, res) {
         }); 
     } 
 
-    res.send('<p>post request - any data? : </p>' + data);
+    //res.send(new Buffer(data));
+    //res.send('<p>post request - any data? : </p>' + data);
 });
 
 
@@ -102,7 +104,7 @@ http.createServer(function (req, res) {
 }).listen(port);*/
 
 
-
+/*
 
 function streamToClient(res, a) {
 
@@ -117,4 +119,4 @@ function streamToClient(res, a) {
   console.log(data);
 
   return data;
-}
+}*/
