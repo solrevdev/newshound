@@ -3,6 +3,7 @@
   "description": "newshound node app",
   "author": "https://github.com/solrevdev",
   "dependencies": {
+    "express" : "*",
     "feed-read": "*",
     "async":"*",
     "request":"*"
@@ -10,5 +11,5 @@
   "devDependencies": {
     "mocha": "*"
   },
-  "engine": "node >= 0.10.26"
+  "engine": "node >= 0.10.2"
 }
