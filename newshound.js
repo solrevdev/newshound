@@ -18,32 +18,49 @@ app.get('/', function(req, res){
   res.sendfile('./public/index.htm');
 });
 
+
 app.post('/feeds', function(req, res) {
    console.log(req);
    console.log('req received');
-
-   var data = '';
+   res.set('Content-Type', 'text/html');
+       
+   var data = '<p>news feeds : </p>';
 
    for (var j = 0; j < urls.length; j++) {
 
         // fetch rss feed for the url:
         feed(urls[j], function(err, articles) {
 
+            if (err) {
+                throw err;
+            }
+
             // iterate through the list of articles returned
             for (var i = 0; i < articles.length; i++) {
 
                 // stream article title to client
-                data += streamToClient(res, articles[i]); 
+                var a = articles[i];
+                var author = a.author || a.feed.name;
+
+                console.log(a.title);
+
+                // send to response
+                data += "<h3>" + a.title + "</h3>";
+                data += "<p><strong>" +author +" - " +a.published + "</strong> <br />\n";
+                data += a.content+"</p>\n";
+
+                console.log("data:" + data);
 
                 // check for end of articles and feeds
                 if( i === articles.length-1 && j === urls.length-1) {
-                    return res.send(data);
+                    console.log("post request no more content " + data);
+                    res.send("post request no more content " + data);
                 } // nope still more to process
             } 
         }); 
     } 
 
-    //return res.send(data);
+    res.send('<p>post request - any data? : </p>' + data);
 });
 
 
@@ -89,7 +106,6 @@ http.createServer(function (req, res) {
 
 function streamToClient(res, a) {
 
-
   var data = "";
   var author = a.author || a.feed.name;
 
@@ -97,6 +113,8 @@ function streamToClient(res, a) {
   data += "<h3>"+a.title +"</h3>";
   data += "<p><strong>" +author +" - " +a.published +"</strong> <br />\n";
   data += a.content+"</p>\n";
+  
+  console.log(data);
 
   return data;
 }
