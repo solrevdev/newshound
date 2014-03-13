@@ -46,6 +46,9 @@ Todo:
 * use [nedb](https://github.com/solrevdev/nedb) as an embedded database for storage
 * tidy up UI by using bootstrap, angularJS and mustache etc etc
 * tie into heroku toolkit so pushes to github deploy to heroku
-* more besides...
+
+* add http://community.opscode.com/cookbooks/npm package to vagrantfile
+* add npm_package "supervisor@0.5.7" into json so it restarts node server on file changes
+
 
 
