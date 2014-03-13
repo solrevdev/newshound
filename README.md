@@ -42,9 +42,8 @@ Then run the app
 
 Todo:
 
-* use express web server to serve static resources (bootstrap images jquery etc)
+* it's 5:30am i need a few hours sleep before work will try and fix ajax call to express /feeds api at lunch
 * use [nedb](https://github.com/solrevdev/nedb) as an embedded database for storage
-* tidy up UI by using bootstrap, angularJS and mustache etc etc
 * tie into heroku toolkit so pushes to github deploy to heroku
 
 * add http://community.opscode.com/cookbooks/npm package to vagrantfile
