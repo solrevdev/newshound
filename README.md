@@ -3,7 +3,7 @@ newshound
 
 node.js application to display news from the bbc and sky. kicking the tyres of new tech.
 
-Newly added a Vagrant VM provisioned with Chef Solo using new vagrant cloud
+Newly added a Vagrant VM provisioned with Chef Solo using new vagrant cloud using Vagrant 1.5
 
 
 
@@ -42,12 +42,15 @@ Then run the app
 
 Todo:
 
-* add images and tidy up, more callbacks or socket.io perhaps?
+* add images and tidy up, ensure it streams and uses callbacks properly or usesocket.io perhaps?
 * use [nedb](https://github.com/solrevdev/nedb) as an embedded database for storage
 * tie into heroku toolkit so pushes to github deploy to heroku
+* tie into vagrant-aws or use aws tools to deploy
 
 * add http://community.opscode.com/cookbooks/npm package to vagrantfile
 * add npm_package "supervisor@0.5.7" into json so it restarts node server on file changes
+* apt-get package json doesnt do the update on the new box
+* folder share or copy files onto vm for speed
 
 
 
